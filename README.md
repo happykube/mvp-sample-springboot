@@ -181,14 +181,17 @@ CREATE TABLE `tb_user` (
 ```
 
 - STS에 import합니다. 
-<img src="./img/2021-04-04-13-09-29.png" width=60% height=60%/>
+<img src="./img/2021-04-04-13-09-29.png" width=40% height=40%/>
 <img src="./img/2021-04-04-13-09-42.png" width=60% height=60%/>
 
 clone한 디렉토리를 선택합니다. 프로젝트를 선택하고, [Finish]를 클릭합니다.   
 <img src="./img/2021-04-04-13-10-18.png" width=60% height=60%/>
 
 
-
+- Update project를 수행합니다.  
+Project를 선택하고, 우측마우스를 누른 후 'Maven > Update project'를 실행합니다.    
+아래 그림과 같이 'Force ...'를 체크하고 업데이트를 수행합니다.   
+<img src="./img/2021-04-04-13-13-27.png" width=60% height=60%/>
 
 
 
