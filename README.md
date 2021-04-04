@@ -12,10 +12,10 @@ mysql과 연동하여 data를 CRUD하며, swagger page로 API를 테스트 할 �
 $ cd ~
 $ git clone https://github.com/happyspringcloud/run-cicd.git
 ```
-- [config server](https://happycloud-lee.tistory.com/209?category=902419) 개발 및 배포 
+- [config server](https://happycloud-lee.tistory.com/209?category=902419) 개발 및 배포   
 sample은 https://github.com/happykube/config 참조   
 
-- [eureka server](https://happycloud-lee.tistory.com/210?category=902419) 개발 및 배포 
+- [eureka server](https://happycloud-lee.tistory.com/210?category=902419) 개발 및 배포   
 sample은 https://github.com/happykube/eureka 참조   
 
 
