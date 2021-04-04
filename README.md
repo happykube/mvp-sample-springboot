@@ -217,37 +217,37 @@ API가 정상적으로 수행되는지 확인한다.
 
 - mvp-sample-springboot 디렉토리를 만들고, config파일들 작성
   - mvp-sample-springboot-cicd-common.properties   
-```
-# Container Image info
-image_registry=docker.io
-image_project=happykube
-image_repository=mvp-sample-springboot
-image_tag=0.0.1
+  ```
+  # Container Image info
+  image_registry=docker.io
+  image_project=happykube
+  image_repository=mvp-sample-springboot
+  image_tag=0.0.1
 
-# resources
-req_cpu=64m
-req_mem=64Mi
-limit_cpu=1024m
-limit_mem=1024Mi
+  # resources
+  req_cpu=64m
+  req_mem=64Mi
+  limit_cpu=1024m
+  limit_mem=1024Mi
 
-# db info
-dbhost=mysql-primary
-dbport=3306
-dbuser=msa
-```
+  # db info
+  dbhost=mysql-primary
+  dbport=3306
+  dbuser=msa
+  ```
 
   - mvp-sample-springboot-cicd-dev.properties   
-```
-# namespace, sa
-namespace=hklee
-serviceaccount=sa-hklee
+  ```
+  # namespace, sa
+  namespace=hklee
+  serviceaccount=sa-hklee
 
-# Service info
-service_target_port=1001
-service_port=1001
-service_host=hklee.mvp-sample-springboot.169.56.84.37.nip.io
-service_replicas=1
+  # Service info
+  service_target_port=1001
+  service_port=1001
+  service_host=hklee.mvp-sample-springboot.169.56.84.37.nip.io
+  service_replicas=1
 
-image_pull_policy=Always
+  image_pull_policy=Always
 
-```
+  ```
