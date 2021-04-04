@@ -208,14 +208,14 @@ k8s node중 아무거나 한 Node의 IP를 지정하면 됩니다.
 API가 정상적으로 수행되는지 확인한다.   
 
 ## config관리 repository에 설정파일 추가   
-- config서버와 연결된 config관리 git repository를 PC에 clone
+- config서버와 연결된 config관리 git repository를 PC에 clone   
 예를 들어 그 이름이 configmng라며 아래와 같이 clone합니다.   
 ```
 > cd ~/work
 > git clone https://github.com/happykube/configmng.git 
 ```
 
-- mvp-sample-springboot 디렉토리를 만들고, config파일들 작성
+- mvp-sample-springboot 디렉토리를 만들고, config파일들 작성   
   - mvp-sample-springboot-cicd-common.properties   
   ```
   # Container Image info
