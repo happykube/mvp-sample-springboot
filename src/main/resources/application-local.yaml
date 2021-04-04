@@ -1,0 +1,29 @@
+spring:  
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://169.56.84.35:30001/msadb?useUnicode=true&characterEncoding=utf-8
+    username: msa
+    password: "passw0rd"
+    sql-script-encoding: utf-8
+    hikari:
+      connection-timeout: 5000
+      validation-timeout: 1000
+      maximum-pool-size: 30
+      minimum-idle: 2
+      connection-test-query: SELECT 1
+    
+#logging
+logging:
+   config:
+   pattern:
+      console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${springAppName:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}" 
+   level: 
+      org.springframework: warn
+      com.springboot.microservices.sample: debug
+  
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    configuration:
+        map-underscore-to-camel-case: true
+    type-aliases-package: com.springboot.microservices.sample.model
+
