@@ -201,4 +201,7 @@ k8s node중 아무거나 한 Node의 IP를 지정하면 됩니다.
 - local에서 config와 eureka서버를 실행합니다.   
 <img src="./img/2021-04-04-13-19-20.png" width=60% height=60%/>
 
-- 
+- mvp-sample-springboot를 실행합니다.  
+<img src="./img/2021-04-04-13-24-13.png" width=50% height=50%/>
+
+- 웹브라우저에서 http://localhost:1001/swagger-ui/를 오픈합니다.  
