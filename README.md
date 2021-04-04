@@ -207,7 +207,7 @@ k8s node중 아무거나 한 Node의 IP를 지정하면 됩니다.
 - 웹브라우저에서 http://localhost:1001/swagger-ui/를 오픈합니다.  
 API가 정상적으로 수행되는지 확인한다.   
 
-## k8s에 배포  
+## config관리 repository에 설정파일 추가   
 - config서버와 연결된 config관리 git repository를 PC에 clone
 예를 들어 그 이름이 configmng라며 아래와 같이 clone합니다.   
 ```
@@ -237,6 +237,7 @@ API가 정상적으로 수행되는지 확인한다.
   ```
 
   - mvp-sample-springboot-cicd-dev.properties   
+  service_host의 IP는 본인 k8s node ip로 변경하세요.   
   ```
   # namespace, sa
   namespace=hklee
@@ -251,3 +252,89 @@ API가 정상적으로 수행되는지 확인한다.
   image_pull_policy=Always
 
   ```
+
+  - mvp-sample-springboot-cicd-prod.properties   
+  service_host의 IP는 본인 k8s node ip로 변경하세요.   
+  ```
+  # namespace, sa
+  namespace=hklee
+  serviceaccount=sa-hklee
+
+  # Service info
+  service_target_port=1001
+  service_port=1001
+  service_host=hklee.mvp-sample-springboot.169.56.84.37.nip.io
+  service_replicas=2
+
+  image_pull_policy=Always
+
+  ```
+  
+  - mvp-sample-springboot-common.yaml
+  값 바꾸실건 없습니다.   
+  ```
+  spring:  
+    datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://${dbhost:169.56.84.35}:${dbport:30001}/msadb?useUnicode=true&characterEncoding=utf-8
+      username: ${dbuser:msa}
+      password: ${dbpassword:passw0rd}
+      sql-script-encoding: utf-8
+      hikari:
+        connection-timeout: 5000
+        validation-timeout: 1000
+        maximum-pool-size: 30
+        minimum-idle: 2
+        connection-test-query: SELECT 1
+      
+  #logging
+  logging:
+    config:
+    pattern:
+        console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${springAppName:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}" 
+    level: 
+        org.springframework: warn
+        com.springboot.microservices.sample: debug
+    
+  mybatis:
+      mapper-locations: classpath:mapper/*.xml
+      configuration:
+          map-underscore-to-camel-case: true
+      type-aliases-package: com.springboot.microservices.sample.model
+  ```
+
+  - mvp-sample-springboot-secret-common.properties
+  ```
+  mq_pw=guest
+  dbpassword=passw0rd
+  ```
+
+- git push합니다. 
+
+## k8s에 배포
+- PC의 소스를 git repository로 push합니다. 
+```
+$ git add . --all && git commit -m "initial version" && git push -u origin main 
+```
+
+
+- k8s에 연결된 PC 또는 VM에 접속합니다.  
+
+- 본인의 OS user로 전환합니다.  
+
+- 작업 디레토리를 만들고, 이동합니다.  
+```
+$ mkdir -p ~/work 
+$ cd ~/work
+```
+
+- 소스를 clone합니다. 
+```
+$ git clone https://github.com/{your git org}/mvp-sample-springboot.git
+```
+
+- run-cicd로 빌드 & 배포합니다.  
+```
+$ run-cicd
+
+```
