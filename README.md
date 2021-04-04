@@ -173,7 +173,7 @@ CREATE TABLE `tb_user` (
 
 ## 프로그램 다운로드, 테스트
 - PC에서 이 repository를 본인git으로 fectch합니다. 
-<img src="../img/2021-04-04-13-02-36.png" width=60% height=60%/>
+<img src="./img/2021-04-04-13-08-45.png" width=60% height=60%/>
 
 - PC에서 fetch한 repository를 clone합니다. 
 ```
@@ -181,6 +181,13 @@ CREATE TABLE `tb_user` (
 ```
 
 - STS에 import합니다. 
+<img src="./img/2021-04-04-13-09-29.png" width=60% height=60%/>
+<img src="./img/2021-04-04-13-09-42.png" width=60% height=60%/>
+
+clone한 디렉토리를 선택합니다. 프로젝트를 선택하고, [Finish]를 클릭합니다.   
+<img src="./img/2021-04-04-13-10-18.png" width=60% height=60%/>
+
+
 
 
 
