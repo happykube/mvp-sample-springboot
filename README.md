@@ -130,7 +130,7 @@ create database if not exists msadb default CHARACTER SET utf8 collate utf8_unic
 ```
 
 새로고침하여, msadb가 생성되었는지 확인합니다.   
-<img src="./img/2021-04-04-12-41-48.png" width=60% height=60%/>
+<img src="./img/2021-04-04-12-41-48.png" width=40% height=40%/>
 
 - user 'msa'를 만듭니다.  
 <img src="./img/2021-04-04-12-44-27.png" width=60% height=60%/>
