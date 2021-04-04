@@ -41,7 +41,7 @@ $ helm repo ls
 $ helm repo update
 ```
 
-- mysql chart의 위치를 찾습니다. 
+- mysql chart의 위치를 찾습니다.   
 아래 예에서는 bitnami/mysql	입니다.   
 ```
 [hklee@bastion mysql]$ helm search repo mysql
@@ -59,7 +59,7 @@ $ helm inspect values bitnami/mysql > mysql.yaml
 - 아래 예제를 참조하여 mysql.yaml을 수정합니다.  
 쉽게 하려면, mysql.yaml을 다운로드하지 말고, 아래 내용으로 그냥 만드세요.   
 
-storageClassName은 k get sc로 확인하시고, nodePort는 충돌안나게 지정하세요.  
+storageClassName은 k get sc로 확인하시고, nodePort는 충돌 안나게 지정하세요.  
 
 ```
 ## MySQL architecture. Allowed values: standalone or replication
