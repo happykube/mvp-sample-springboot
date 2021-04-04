@@ -4,6 +4,7 @@ Springboot로 작성한 backend microservice 예제입니다.
 mysql과 연동하여 data를 CRUD하며, swagger page로 API를 테스트 할 수 있습니다.   
 
 ## 사전준비 
+- [STS](https://spring.io/tools) 설치
 - [DBeaver](https://dbeaver.io/)를 설치합니다.  
 - NFS Dynamic provisiong을 사용하려면, [NFS설치와 Dynamic provisiong설정](https://happycloud-lee.tistory.com/178?category=832243)을 참조하십시오.
 - [run-cicd 파이프라인](https://happycloud-lee.tistory.com/195?category=832250) 다운로드
@@ -11,6 +12,12 @@ mysql과 연동하여 data를 CRUD하며, swagger page로 API를 테스트 할 �
 $ cd ~
 $ git clone https://github.com/happyspringcloud/run-cicd.git
 ```
+- [config server](https://happycloud-lee.tistory.com/209?category=902419) 개발 및 배포 
+sample은 https://github.com/happykube/config 참조   
+
+- [eureka server](https://happycloud-lee.tistory.com/210?category=902419) 개발 및 배포 
+sample은 https://github.com/happykube/eureka 참조   
+
 
 ## mysql 설치
 - k8s에 인증된 PC 또는 VM으로 접속합니다. 작업 OS id로 바꿉니다.   
@@ -145,9 +152,36 @@ grant all PRIVILEGES on msadb.* to 'msa'@'%';
 ```
 
 - Connection을 편집하여, Database를 msadb로 변경합니다. 
-<img src="./img/2021-04-04-12-52-05.png" width=30% height=30%/>
+<img src="./img/2021-04-04-12-52-05.png" width=40% height=40%/>
 
-<img src="./img/2021-04-04-12-52-34.png" width=20% height=20%/>
+<img src="./img/2021-04-04-12-52-34.png" width=40% height=40%/>
+
+- Table 'tb_user'를 생성합니다. 
+SQL편집기를 열고, 아래 내용을 실행합니다. 
+```
+CREATE TABLE `tb_user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_nm` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `addr` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cell_phone` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `agree_info` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `birth_dt` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
+## 프로그램 다운로드, 테스트
+- PC에서 이 repository를 본인git으로 fectch합니다. 
+<img src="../img/2021-04-04-13-02-36.png" width=60% height=60%/>
+
+- PC에서 fetch한 repository를 clone합니다. 
+```
+> git clone https://github.com/{your git org}/mvp-sample-springboot.git
+```
+
+- STS에 import합니다. 
+
 
 
 
