@@ -122,6 +122,11 @@ mysql-primary의 nodePort, auth.database, auth.rootPassword를 입력합니다.
 
 - Database 'msadb'를 생성합니다. 
 <img src="./img/2021-04-04-12-37-46.png" width=60% height=60%/>
+<img src="./img/2021-04-04-12-39-58.png" width=60% height=60%/>
 
+아래 내용을 붙여넣기 하고, 위 그림과 같이 왼쪽 화살표 아이콘을 클릭하여 실행합니다.
+```
+create database if not exists msadb default CHARACTER SET utf8 collate utf8_unicode_ci;
+```
 
 
