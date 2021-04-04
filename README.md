@@ -133,17 +133,21 @@ create database if not exists msadb default CHARACTER SET utf8 collate utf8_unic
 <img src="./img/2021-04-04-12-41-48.png" width=40% height=40%/>
 
 - user 'msa'를 만듭니다.  
-<img src="./img/2021-04-04-12-44-27.png" width=60% height=60%/>
-
-아래 내용을 붙여넣기 하고, 위 그림과 같이 왼쪽 화살표 아이콘을 클릭하여 실행합니다.   
+아래 내용을 붙여넣기 하고, 왼쪽 화살표 아이콘을 클릭하여 실행합니다.   
 ```
 create user 'msa'@'%' IDENTIFIED by 'passw0rd';
 ```
 
 - user 'msa'가 msadb를 사용할 수 있도록 권한을 부여합니다.   
-<img src="./img/2021-04-04-12-45-55.png" width=60% height=60%/>
-
-아래 내용을 붙여넣기 하고, 위 그림과 같이 왼쪽 화살표 아이콘을 클릭하여 실행합니다.   
+아래 내용을 붙여넣기 하고, 왼쪽 화살표 아이콘을 클릭하여 실행합니다.   
 ```
 grant all PRIVILEGES on msadb.* to 'msa'@'%';
 ```
+
+- Connection을 편집하여, Database를 msadb로 변경합니다. 
+<img src="./img/2021-04-04-12-52-05.png" width=30% height=30%/>
+
+<img src="./img/2021-04-04-12-52-34.png" width=20% height=20%/>
+
+
+
