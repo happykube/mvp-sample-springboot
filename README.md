@@ -205,3 +205,49 @@ k8s node중 아무거나 한 Node의 IP를 지정하면 됩니다.
 <img src="./img/2021-04-04-13-24-13.png" width=50% height=50%/>
 
 - 웹브라우저에서 http://localhost:1001/swagger-ui/를 오픈합니다.  
+API가 정상적으로 수행되는지 확인한다.   
+
+## k8s에 배포  
+- config서버와 연결된 config관리 git repository를 PC에 clone
+예를 들어 그 이름이 configmng라며 아래와 같이 clone합니다.   
+```
+> cd ~/work
+> git clone https://github.com/happykube/configmng.git 
+```
+
+- mvp-sample-springboot 디렉토리를 만들고, config파일들 작성
+  - mvp-sample-springboot-cicd-common.properties   
+```
+# Container Image info
+image_registry=docker.io
+image_project=happykube
+image_repository=mvp-sample-springboot
+image_tag=0.0.1
+
+# resources
+req_cpu=64m
+req_mem=64Mi
+limit_cpu=1024m
+limit_mem=1024Mi
+
+# db info
+dbhost=mysql-primary
+dbport=3306
+dbuser=msa
+```
+
+  - mvp-sample-springboot-cicd-dev.properties   
+```
+# namespace, sa
+namespace=hklee
+serviceaccount=sa-hklee
+
+# Service info
+service_target_port=1001
+service_port=1001
+service_host=hklee.mvp-sample-springboot.169.56.84.37.nip.io
+service_replicas=1
+
+image_pull_policy=Always
+
+```
