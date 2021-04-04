@@ -129,4 +129,19 @@ mysql-primary의 nodePort, auth.database, auth.rootPassword를 입력합니다.
 create database if not exists msadb default CHARACTER SET utf8 collate utf8_unicode_ci;
 ```
 
+새로고침하여, msadb가 생성되었는지 확인합니다. 
+<img src="./img/2021-04-04-12-41-48.png" width=60% height=60%/>
 
+- user 'msa'를 만듭니다.  
+<img src="./img/2021-04-04-12-44-27.png" width=60% height=60%/>
+아래 내용을 붙여넣기 하고, 위 그림과 같이 왼쪽 화살표 아이콘을 클릭하여 실행합니다.
+```
+create user 'msa'@'%' IDENTIFIED by 'passw0rd';
+```
+
+- user 'msa'가 msadb를 사용할 수 있도록 권한을 부여합니다.  
+<img src="./img/2021-04-04-12-45-55.png" width=60% height=60%/>
+아래 내용을 붙여넣기 하고, 위 그림과 같이 왼쪽 화살표 아이콘을 클릭하여 실행합니다.
+```
+grant all PRIVILEGES on msadb.* to 'msa'@'%';
+```
