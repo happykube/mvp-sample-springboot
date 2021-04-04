@@ -31,10 +31,10 @@ $ mkdir -p ~/install/mysql
 $ cd ~/install/mysql
 ``` 
 
-- helm chart registry를 추가합니다. 
+- helm chart registry를 추가합니다.   
 helm은 yum과 같은 프로그램 설치관리자이며 k8s에 리소스(pod, service 등)를 쉽게 배포해 줍니다.  
 helm chart은 k8s 리소스 정의 파일들을 묶어 놓은것입니다.  
-bitnami는 helm chart를 제공하는 회사명이며, 안정적인 helm chart를 제공하는 고마운 회사입니다.   
+bitnami는 helm chart를 제공하는 회사명이며, 안정적인 helm chart를 제공하고 있습니다.      
 ```
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm repo ls
