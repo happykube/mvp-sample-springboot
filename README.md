@@ -336,5 +336,27 @@ $ git clone https://github.com/{your git org}/mvp-sample-springboot.git
 - run-cicd로 빌드 & 배포합니다.  
 ```
 $ run-cicd
-
+[hklee@bastion mvp-sample-springboot]$ run-cicd
+# container image registry 로그인 username: happycloudpak
+# container image registry 로그인 password: xxxxxxxxx
+# kubernetes context name(현재 context는 .): .
+# 배포대상 프로파일(dev/prod): dev
+# base directory(현재 directory는 .): .
+# 개발언어(java/nodejs/react): java
+# config server ingress name(해당없으면 ENTER): config
 ```
+
+- Pod가 Running상태가 될때까지 기다립니다. 
+```
+[hklee@bastion mvp-sample-springboot]$ kubectl get po -w | grep mvp-sample-springboot
+mvp-sample-springboot-0                           1/1     Running     0          25m
+```
+
+- ingress주소를 복사하여, 웹브라우저에서 오픈합니다. 
+```
+[hklee@bastion mvp-sample-springboot]$ kubectl get ing | grep mvp-sample-springboot
+mvp-sample-springboot   <none>   hklee.mvp-sample-springboot.169.56.84.37.nip.io
+```
+<img src="./img/2021-04-04-14-01-06.png" width=70% height=70%/>
+
+
