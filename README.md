@@ -194,4 +194,11 @@ Project를 선택하고, 우측마우스를 누른 후 'Maven > Update project'�
 <img src="./img/2021-04-04-13-13-27.png" width=60% height=60%/>
 
 
+- application-local.yaml파일을 열어, mysql host의 IP를 수정합니다.  
+k8s node중 아무거나 한 Node의 IP를 지정하면 됩니다.   
+<img src="./img/2021-04-04-13-17-33.png" width=90% height=90%/>
 
+- local에서 config와 eureka서버를 실행합니다.   
+<img src="./img/2021-04-04-13-19-20.png" width=60% height=60%/>
+
+- 
