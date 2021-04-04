@@ -114,6 +114,8 @@ $ kubectl get po -w
 - DBeaver를 실행합니다. 
 - 새로운 Connection을 만듭니다. 
 <img src="./img/2021-04-04-12-25-55.png" width=60% height=60%/>
-<img src="./img/2021-04-04-12-28-46.png" width=60% height=60%/>
+
+
+<img src="./img/2021-04-04-12-31-36.png" width=60% height=60%/>
 
 
