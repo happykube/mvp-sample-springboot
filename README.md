@@ -115,7 +115,11 @@ $ kubectl get po -w
 - 새로운 Connection을 만듭니다. 
 <img src="./img/2021-04-04-12-25-55.png" width=60% height=60%/>
 
-
+Server Host는 k8s node중 아무거나 한 node의 public IP를 지정합니다.  
+위 mysql.yaml에 정의한대로,   
+mysql-primary의 nodePort, auth.database, auth.rootPassword를 입력합니다.   
 <img src="./img/2021-04-04-12-31-36.png" width=60% height=60%/>
+
+- 
 
 
