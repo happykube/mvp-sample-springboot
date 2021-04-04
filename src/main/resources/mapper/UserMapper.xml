@@ -5,7 +5,7 @@
 	<select id="selectUser" resultType="User">
 	    select 
 	    	*
-	    from tb_user;
+	    from tb_user limit 10;
 	</select>
 	
 	<select id="selectUserById" parameterType="String" resultType="User">
@@ -59,6 +59,3 @@
 	</delete>
 	
 </mapper>
-
-
-
