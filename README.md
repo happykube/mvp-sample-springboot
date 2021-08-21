@@ -154,7 +154,7 @@ $ run-cicd
 mvp-sample-springboot-0                           1/1     Running     0          25m
 ```
 
-- ingress주소를 복사하여, 웹브라우저에서 오픈합니다. 
+- ingress주소를 복사하여, 웹브라우저에서 오픈합니다.  
 ```
 [hklee@bastion mvp-sample-springboot]$ kubectl get ing | grep mvp-sample-springboot
 mvp-sample-springboot   <none>   hklee.mvp-sample-springboot.169.56.84.37.nip.io
