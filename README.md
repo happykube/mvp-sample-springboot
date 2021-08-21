@@ -25,10 +25,9 @@ $ git clone https://github.com/happyspringcloud/run-cicd.git
 - 새로운 Connection을 만듭니다. 
 <img src="./img/2021-04-04-12-25-55.png" width=60% height=60%/>
 
-Server Host는 k8s node중 아무거나 한 node의 public IP를 지정합니다.  
-위 mysql.yaml에 정의한대로,   
-mysql-primary의 nodePort, auth.database, auth.rootPassword를 입력합니다.   
-<img src="./img/2021-04-04-12-31-36.png" width=80% height=80%/>
+Server Host는 mysql이 설치된 VM의 public IP를 지정합니다.  
+Database는 mysql, user는 root, 암호는 mysql설치 시 지정한 암호를 입력합니다. 
+
 
 - Database 'msadb'를 생성합니다. 
 <img src="./img/2021-04-04-12-37-46.png" width=60% height=60%/>
@@ -54,6 +53,7 @@ create user 'msa'@'%' IDENTIFIED by 'passw0rd';
 grant all PRIVILEGES on msadb.* to 'msa'@'%';
 ```
 
+
 - Connection을 편집하여, Database를 msadb로 변경합니다. 
 <img src="./img/2021-04-04-12-52-05.png" width=40% height=40%/>
 
@@ -64,18 +64,18 @@ SQL편집기를 열고, 아래 내용을 실행합니다.
 ```
 CREATE TABLE `tb_user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `user_nm` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `addr` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cell_phone` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `agree_info` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `birth_dt` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` varchar(50) DEFAULT NULL,
+  `user_nm` varchar(250) DEFAULT NULL,
+  `addr` varchar(500) DEFAULT NULL,
+  `cell_phone` varchar(250) DEFAULT NULL,
+  `agree_info` varchar(50) DEFAULT NULL,
+  `birth_dt` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=UTF8;
 ```
 
 ## 프로그램 다운로드, 테스트
-- PC에서 이 repository를 본인git으로 fectch합니다. 
+- PC에서 이 repository를 본인 git으로 fectch합니다. 
 <img src="./img/2021-04-04-13-08-45.png" width=60% height=60%/>
 
 - PC에서 fetch한 repository를 clone합니다. 
