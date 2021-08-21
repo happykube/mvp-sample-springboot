@@ -1,9 +1,19 @@
+server:
+  port: ${service_port:1001}
+
 spring:  
+  application:
+    name: mvp-sample-springboot
+
+  profiles:
+    active: ${profile:default}
+    include: common
+    
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://169.56.84.35:30001/msadb?useUnicode=true&characterEncoding=utf-8
-    username: msa
-    password: "passw0rd"
+    url: jdbc:mysql://${db_host:169.56.70.197}:${db_port:3306}/${db_name:msa}?useUnicode=true&characterEncoding=utf-8
+    username: ${db_user:msa}
+    password: ${db_pw:happy@cloud}
     sql-script-encoding: utf-8
     hikari:
       connection-timeout: 5000

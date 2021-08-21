@@ -1,4 +1,4 @@
-package com.springboot.microservices.sample.presentation;
+package com.springboot.microservices.sample.ctrl;
 
 /*
  * Presentation Layer: UserController
