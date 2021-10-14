@@ -11,7 +11,7 @@ spring:
     
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://${db_host:169.56.70.197}:${db_port:3306}/${db_name:msa}?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://${db_host:169.56.70.205}:${db_port:3306}/${db_name:msadb}?useUnicode=true&characterEncoding=utf-8
     username: ${db_user:msa}
     password: ${db_pw:happy@cloud}
     sql-script-encoding: utf-8
