@@ -23,7 +23,7 @@ public class SwaggerConfig {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.springboot.microservices.sample.ctrl"))
+				.apis(RequestHandlerSelectors.basePackage("com.springboot.microservices.sample.rest"))
 				.paths(PathSelectors.any())
 				.build();		
 	}

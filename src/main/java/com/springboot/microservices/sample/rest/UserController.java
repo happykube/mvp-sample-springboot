@@ -5,6 +5,7 @@ package com.springboot.microservices.sample.rest;
  */
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,22 +14,40 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.microservices.sample.data.UserDao;
+import com.springboot.microservices.sample.model.Hello;
 import com.springboot.microservices.sample.model.UpdateUser;
 import com.springboot.microservices.sample.model.User;
 import com.springboot.microservices.sample.service.UserService;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import lombok.RequiredArgsConstructor;
 
 @Api(value="User API")
 @RestController
+@RequiredArgsConstructor
 public class UserController {
-
+	private String msgTemplate = "%s 님 반갑습니다.";
+	private final AtomicLong vistorCounter = new AtomicLong();
+	
 	@Autowired
 	private UserService userService;
+	
+	@ApiOperation(value = "Hello API 입니다.")
+	@ApiImplicitParams({
+		@ApiImplicitParam(name = "name", value = "이름", required = true, dataType = "String", paramType = "query", defaultValue = "홍길동") 
+	})
+	@GetMapping("/hello")
+	public Hello getHelloMsg(@RequestParam(value = "name") String name) {
+		return new Hello(vistorCounter.incrementAndGet(), String.format(msgTemplate, name));
+	}
 	
 	@GetMapping("/users")	
 	@ApiOperation(value="사용자 정보 가져오기", notes="사용자 정보를 제공합니다. ")
