@@ -28,11 +28,11 @@ public class TestDomain {
 		for(int i=0; i < userCount-startUserId + 1; i++) {
 			user = new User();
 			
-			user.setUserId("user"+String.format("%08d", startUserId+i));
-			user.setUserNm("유저"+String.format("%08d", startUserId+i));
+			user.setUserId("user"+String.format("%02d", startUserId+i));
+			user.setUserNm("유저"+String.format("%02d", startUserId+i));
 			user.setAddr("");
-			user.setCellPhone(String.format("%08d", startUserId+i));
-			user.setBirthDt(String.format("%08d", startUserId+i));
+			user.setCellPhone(String.format("%02d", startUserId+i));
+			user.setBirthDt(String.format("%02d", startUserId+i));
 			user.setAgreeInfo("");
 			
 			list.add(user);

@@ -11,9 +11,9 @@ spring:
     
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://${db_host:169.56.70.205}:${db_port:3306}/${db_name:msadb}?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://${db_host:165.192.105.57}:${db_port:31001}/${db_name:msadb}?useUnicode=true&characterEncoding=utf-8
     username: ${db_user:msa}
-    password: ${db_pw:happy@cloud}
+    password: ${db_pw:passw0rd}
     sql-script-encoding: utf-8
     hikari:
       connection-timeout: 5000

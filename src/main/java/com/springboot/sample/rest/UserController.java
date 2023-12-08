@@ -57,6 +57,9 @@ public class UserController {
 	
 	@GetMapping("/users/{userId}")
 	@ApiOperation(value="아이디로 사용자 정보 가져오기 ")
+	@ApiImplicitParams({
+		@ApiImplicitParam(name = "userId", value = "user id", required = true, dataType = "String", paramType = "path", defaultValue = "user00000001") 
+	})
 	public ResponseEntity <User> getUserById(
 				@PathVariable (name="userId", required = true) String userId
 			) { 
@@ -64,7 +67,7 @@ public class UserController {
 	}
 	
 	@PutMapping("/users/{userId}")
-	@ApiOperation(value="사용자 정보 변경하기 ")
+	@ApiOperation(value="사용자 정보 변경하기 ")	
 	public ResponseEntity <String > setUserUpdate(
 			@PathVariable(name="userId",required = true ) String userId, 
 			@RequestBody UpdateUser sampleUser
@@ -93,6 +96,10 @@ public class UserController {
 
 	@GetMapping("/createtestusers/{startUserId}/{userCount}")
 	@ApiOperation(value="테스트 사용자를 userCount명 등록하기 ")
+	@ApiImplicitParams({
+		@ApiImplicitParam(name = "startUserId", value = "시작번호(예:1)", required = true, dataType = "String", paramType = "path", defaultValue = "1"),
+		@ApiImplicitParam(name = "userCount", value = "생성유저수(예:10)", required = true, dataType = "String", paramType = "path", defaultValue = "10") 
+	})
 	public ResponseEntity <String > createTestUsers(
 			@PathVariable (name="startUserId", required = true) int startUserId,
 			@PathVariable (name="userCount", required = true) int userCount
