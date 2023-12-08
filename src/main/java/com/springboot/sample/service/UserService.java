@@ -1,4 +1,4 @@
-package com.springboot.microservices.sample.service;
+package com.springboot.sample.service;
 
 /*
  * Service Layer: UserService
@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.springboot.microservices.sample.domain.TestDomain;
-import com.springboot.microservices.sample.domain.UserDomain;
-import com.springboot.microservices.sample.model.UpdateUser;
-import com.springboot.microservices.sample.model.User;
+import com.springboot.sample.domain.TestDomain;
+import com.springboot.sample.domain.UserDomain;
+import com.springboot.sample.model.UpdateUser;
+import com.springboot.sample.model.User;
 
 @Service
 public class UserService {

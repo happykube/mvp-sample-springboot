@@ -1,4 +1,4 @@
-package com.springboot.microservices.sample.data;
+package com.springboot.sample.data;
 
 /*
  * Data(Persistent) Layer: UserDao
@@ -9,8 +9,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.springboot.microservices.sample.model.UpdateUser;
-import com.springboot.microservices.sample.model.User;
+import com.springboot.sample.model.UpdateUser;
+import com.springboot.sample.model.User;
 
 @Mapper
 public interface UserDao {

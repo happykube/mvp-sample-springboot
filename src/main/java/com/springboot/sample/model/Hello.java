@@ -1,4 +1,4 @@
-package com.springboot.microservices.sample.model;
+package com.springboot.sample.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

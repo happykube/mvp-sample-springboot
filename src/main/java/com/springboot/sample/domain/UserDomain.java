@@ -1,4 +1,4 @@
-package com.springboot.microservices.sample.domain;
+package com.springboot.sample.domain;
 
 /*
  * Domain(Business) Layer: UserDomain
@@ -13,9 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.springboot.microservices.sample.data.UserDao;
-import com.springboot.microservices.sample.model.UpdateUser;
-import com.springboot.microservices.sample.model.User;
+import com.springboot.sample.data.UserDao;
+import com.springboot.sample.model.UpdateUser;
+import com.springboot.sample.model.User;
 
 @Service
 public class UserDomain {

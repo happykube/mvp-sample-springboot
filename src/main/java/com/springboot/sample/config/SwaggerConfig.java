@@ -1,4 +1,4 @@
-package com.springboot.microservices.sample.config;
+package com.springboot.sample.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class SwaggerConfig {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.springboot.microservices.sample.rest"))
+				.apis(RequestHandlerSelectors.basePackage("com.springboot.sample.rest"))
 				.paths(PathSelectors.any())
 				.build();		
 	}

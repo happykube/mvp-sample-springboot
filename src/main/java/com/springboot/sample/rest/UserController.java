@@ -1,4 +1,4 @@
-package com.springboot.microservices.sample.rest;
+package com.springboot.sample.rest;
 
 /*
  * Presentation Layer: UserController
@@ -17,11 +17,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.microservices.sample.data.UserDao;
-import com.springboot.microservices.sample.model.Hello;
-import com.springboot.microservices.sample.model.UpdateUser;
-import com.springboot.microservices.sample.model.User;
-import com.springboot.microservices.sample.service.UserService;
+import com.springboot.sample.model.Hello;
+import com.springboot.sample.model.UpdateUser;
+import com.springboot.sample.model.User;
+import com.springboot.sample.service.UserService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
